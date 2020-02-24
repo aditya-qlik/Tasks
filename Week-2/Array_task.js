@@ -1,26 +1,16 @@
 const logArrayButton = document.querySelector('#logArray');
-const arrayContentButton = document.querySelector('#arrayContent');
-
+const logArrayContentButton = document.querySelector('#arrayContent');
 const numbers = Array.from(
         {
-                length: 101,
+            length: 101,
         },
         (_item, index) => index
 );
-
 function logArray() {
-        console.log(numbers);
+        console.log(numbers);acg
 }
-
-function arrayContent(element) {
-        console.log(element);
+function logArrayContents() {
+        numbers.forEach(content => console.log(content));
 }
-
-function logArrayContents(arrayToLog) {
-        return function() {
-                arrayToLog.forEach(arrayContent);
-        };
-}
-
 logArrayButton.addEventListener('click', logArray);
-arrayContentButton.addEventListener('click', logArrayContents(numbers));
+logArrayContentButton.addEventListener('click', logArrayContents);
