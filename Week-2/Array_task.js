@@ -7,7 +7,7 @@ const numbers = Array.from(
         (_item, index) => index
 );
 function logArray() {
-        console.log(numbers);
+        console.log(numbers); 
 }
 function logArrayContents() {
         numbers.forEach(content => console.log(content));
