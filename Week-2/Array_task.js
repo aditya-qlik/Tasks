@@ -14,9 +14,9 @@ function logArray() {
 function logArrayContents() {
         numbers.forEach(content => console.log(content));
 }
-function checkDivisibilityBy3and5(number){
-        return number % 3 === 0 && number % 5 === 0;
-}
+// function checkDivisibilityBy3and5(number){
+//         return number % 3 === 0 && number % 5 === 0;
+// }
 function checkDivisibilityBy3(number) {
         return number % 3 === 0;
 }
@@ -25,7 +25,7 @@ function checkDivisibilityBy5(number) {
 }
 function checkArray(arrayToCheck){
         for (number of arrayToCheck) {
-                if(checkDivisibilityBy3and5(number)){
+                if (heckDivisibilityBy5(number) && checkDivisibilityBy3(number)) {
                         console.log('Fizz Buzz');
                         dualDivisibleNumbers.push(number);
                 } else if(checkDivisibilityBy5(number)){
