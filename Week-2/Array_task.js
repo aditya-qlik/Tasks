@@ -25,7 +25,7 @@ function checkDivisibilityBy5(number) {
 }
 function checkArray(arrayToCheck){
         for (number of arrayToCheck) {
-                if (heckDivisibilityBy5(number) && checkDivisibilityBy3(number)) {
+                if (checkDivisibilityBy5(number) && checkDivisibilityBy3(number)) {
                         console.log('Fizz Buzz');
                         dualDivisibleNumbers.push(number);
                 } else if(checkDivisibilityBy5(number)){
