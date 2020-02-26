@@ -1,26 +1,25 @@
-const userFirstName = document.querySelector(' #fname ');
-const userLastName = document.querySelector(' #lname ');
-const userDateOfBirth = document.querySelector(' #dob ');
-const submit = document.querySelector(' #sub ');
-const inputForm = document.querySelector(' #userInfo ');
-const users = [];
+const users = []; // Array with all user objects
 /*
 * creating Object of User Information
 */
-function createUserObject(){
+function createUserObject(fName,lName,userDOB){
     return {
-        firstName: userFirstName.value,
-        lastName: userLastName.value,
-        dateOfBirth: userDateOfBirth.value,
+        firstName: fName,
+        lastName: lName,
+        dateOfBirth: userDOB,
     };
 }
 /* 
  * pushing User Object to the array as an object 
  */
 function addUser() {
-    users.push(createUserObject());
+    const userFirstName = document.querySelector(' #fname ').value;
+    const userLastName = document.querySelector(' #lname ').value;
+    const userDateOfBirth = document.querySelector(' #dob ').value;
+    const inputForm = document.querySelector(' #userInfo ');
+    users.push(createUserObject(userFirstName, userLastName, userDateOfBirth));
     console.table(users);
-    userInfo.reset();
+    inputForm.reset();
 }
 
-submit.addEventListener('click', addUser);
+document.querySelector(' #sub ').addEventListener('click', addUser);
