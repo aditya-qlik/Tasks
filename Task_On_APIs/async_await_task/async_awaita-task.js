@@ -5,7 +5,7 @@ const userArray = [];
 async function userInfoArray(userInfo) {
     const userData = await userInfo;
     userArray.push(userData);
-    console.table(userArray);
+    console.log(userArray);
 }
 
 async function fetchUserData(){
