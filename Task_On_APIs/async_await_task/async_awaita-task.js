@@ -8,21 +8,25 @@ function handleError(err) {
 }
 
 async function userInfoArray(userInfo) {
+    console.log(userInfo)
     const userData = await userInfo;
     userArray.push(userData);
     console.log(userArray);
 }
-
-async function fetchUserData() {
-    const username = document.querySelector('#name').value;
-    const response = await fetch(`${userEndpoint}/${username}`).catch(handleError);
+function checkResponse(response){
+    // console.log(response);
     if (response.status !== 200) {
         handleError(response.statusText);
     } else {
-        const data = await response.json();
+        const data =  response.json();
         console.log(data);
         userInfoArray(data);
     }
+}
+async function fetchUserData() {
+    const username = document.querySelector('#name').value;
+    const response = await fetch(`${userEndpoint}/${username}`);
+    checkResponse(response);
 }
 
 document.querySelector('#submit').addEventListener('click', fetchUserData);
