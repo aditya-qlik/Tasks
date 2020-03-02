@@ -10,7 +10,7 @@ async function userInfoArray(userInfo) {
 
 async function fetchUserData(){
     const username = document.querySelector('#name').value;
-    const response = await fetch(`${userEndpoint}/${username}`).catch(handleError);
+    const response = await fetch(`${userEndpoint}/${username}`);
     if (response.status !== 200){
         handleError(response.statusText);
     } else {

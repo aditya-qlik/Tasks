@@ -1,23 +1,18 @@
-const baseEndpoint = 'https://api.github.com';
-const usersEndpoint = `${baseEndpoint}/users`;
-// const fetchData = document.querySelector('.call');
+const baseEndpoint = `https://api.github.com`;
+const userEndpoint = `${baseEndpoint}/users`;
+const userArray = [];
+function userInfo(username,createArray){
+    fetch(`${userEndpoint}/${username}`).then(response => response.json()).then(users => {userArray.push(users)}).catch((err) =>{
+        console.log(err);
+    });
+    createArray(userArray);
+}
+function displayUserArray(user){
+    console.log(user);
+}
+function clickHandler(){
+    const username = document.querySelector('#user').value;
+    userInfo(username,displayUserArray);
+}
 
-// console.log(fetchData);
-async function fetchInformation(){
-    const information = await fetch(`${usersEndpoint}`);
-    return information;
-}
-function createArray(value){
-    const userArray = value;   
-    console.log(userArray);
-    return userArray;
-}
-function findUser(data){
-    const userName = document.querySelector('.user');
-    const result = data.filter(element => element.login === userName)
-    console.log(result);
-}
-function handleClick(){
-    findUser(createArray(fetchInformation()));
-}
-document.querySelector('.call').addEventListener('click',handleClick)
+document.querySelector('.call').addEventListener('click',clickHandler);
