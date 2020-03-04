@@ -11,8 +11,7 @@ function calculate() {
         const num1 = checkNumber1();
         const num2 = checkNumber2();
         const operator = operation.value;
-        // eslint-disable-next-line no-console
-        console.log(num1, num2);
+        // console.log(num1, num2);
         let printOut;
         switch (operator) {
                 case '+':
